@@ -59,10 +59,10 @@
             - name: windows-arm64
               goos: windows
               goarch: arm64
-            - name: windows-arm32v7
-              goos: windows
-              goarch: arm
-              goarm: 7
+            # - name: windows-arm32v7
+            #   goos: windows
+            #   goarch: arm
+            #   goarm: 7
             
             # linux
             - name: linux-amd64
