@@ -158,6 +158,7 @@
           with:
             repository: 'SagerNet/sing-box'
             ref: 'stable'
+            fetch-depth: 0 
 
         - name: Setup Go
           uses: actions/setup-go@v5
