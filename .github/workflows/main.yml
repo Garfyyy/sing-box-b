@@ -19,7 +19,7 @@
         - name: Check for updates
           id: check
           run: |
-            latest_commit=$(git ls-remote https://github.com/SagerNet/sing-box.git refs/heads/main | cut -f1)
+            latest_commit=$(git ls-remote https://github.com/SagerNet/sing-box.git refs/heads/stable | cut -f1)
             echo "latest_commit=$latest_commit" >> $GITHUB_OUTPUT
 
             if [ ! -f .last_commit ] || [ "$latest_commit" != "$(cat .last_commit)" ]; then
@@ -31,7 +31,7 @@
         - name: clone repository
           id: get_version
           run: |
-            git clone --branch main https://github.com/SagerNet/sing-box.git
+            git clone --branch stable https://github.com/SagerNet/sing-box.git
             cd sing-box
             version=$(git describe --tags)
             echo $version
@@ -157,7 +157,7 @@
           uses: actions/checkout@main
           with:
             repository: 'SagerNet/sing-box'
-            ref: 'main'
+            ref: 'stable'
 
         - name: Setup Go
           uses: actions/setup-go@v5
